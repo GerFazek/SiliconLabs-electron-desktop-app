@@ -3,7 +3,7 @@ Library       Process
 Library       OperatingSystem
 
 *** Variables ***
-${python_script}        siliconlabs.py
+${python_script}        silabsrobot.py
 ${application_name}    silicon-labs-desktop-app
 ${python_executable}   C:\\Users\\Lenovo T490\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe
 
