@@ -11,7 +11,9 @@ pipeline {
         stage('Build Electron App') {
             steps {
                 bat 'npm install'
-
+                bat 'python -m venv venv'
+                bat 'venv\\Scripts\\activate'
+                
                 bat 'C:\\Users\\"Lenovo T490"\\AppData\\Roaming\\npm\\electron-packager.cmd . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0 --overwrite'
             }
         }
