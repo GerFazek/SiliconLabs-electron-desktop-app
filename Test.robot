@@ -1,6 +1,15 @@
 *** Settings ***
-Library    silabsrobot.py
+Library       Process
+Library       OperatingSystem
+
+*** Variables ***
+${python_script}        siliconlabs.py
+${application_name}    silicon-labs-desktop-app
+${python_executable}   .\\Scripts\\python.exe
 
 *** Test Cases ***
-Open and Test Application
-    Open Application    D:\\src\\silicon-labs-desktop-app\\dist\\SiliconLabs-win32-x64\\SiliconLabs.exe
+Run Predefined Python Method
+    ${result}    Run Process    powershell    Invoke-Expression "${python_executable} .\\${python_script}"
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    Should Be Equal As Numbers    ${result.rc}    0
