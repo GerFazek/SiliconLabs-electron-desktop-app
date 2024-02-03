@@ -34,7 +34,7 @@ pipeline {
     }
 
     triggers {
-        pollSCM('*/30 * * * *')
+        pollSCM('* * * * *')
     }
 }
 
