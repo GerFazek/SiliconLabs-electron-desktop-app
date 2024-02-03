@@ -10,14 +10,19 @@ pipeline {
 
         stage('Build Electron App') {
             steps {
-                // Install dependencies
                 bat 'npm install'
 
-                // Run electron-packager command
                 bat 'electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
-
-                // Start Electron app
+            }
+        }
+        stage('Start Electron App') {
+            steps {
                 bat 'start dist/SiliconLabs-win32-x64/SiliconLabs.exe'
+            }
+        }
+        stage('Start Robot Test') {
+            steps {
+                bat 'robot Test.robot'
             }
         }
     }
