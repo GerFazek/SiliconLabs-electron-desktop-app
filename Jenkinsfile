@@ -10,9 +10,14 @@ pipeline {
 
         stage('Build Electron App') {
             steps {
-                sh 'npm install'
+                // Install dependencies
+                bat 'npm install'
 
-                sh 'electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
+                // Run electron-packager command
+                bat 'electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
+
+                // Start Electron app
+                bat 'start dist/SiliconLabs-win32-x64/SiliconLabs.exe'
             }
         }
     }
