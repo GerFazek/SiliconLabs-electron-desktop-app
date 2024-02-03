@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button id="loadButton">Go to Google</button>
+    <div id="embedded"></div>
+    <br />
+
+    <button id="getSunriseButton">Get Sunrise Time</button>
+    <label id="sunriseLabel"></label>
+    <button id="clearSunriselabel">Clear Sunrise time</button>
+    <input type="text" placeholder="Some text"></input>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadButton = document.getElementById("loadButton");
+        const embeddedDiv = document.getElementById("embedded");
+
+        loadButton.addEventListener("click", function () {
+          embeddedDiv.innerHTML = "";
+
+          // Embed YouTube video iframe
+          const youtubeIframe = document.createElement("iframe");
+          youtubeIframe.width = "560";
+          youtubeIframe.height = "315";
+          youtubeIframe.src =
+            "https://www.youtube.com/embed/Pd1E2ZL6F0c?si=rTHcGDnGJ5HBa1xO";
+          youtubeIframe.title = "YouTube video player";
+          youtubeIframe.frameBorder = "0";
+          youtubeIframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          youtubeIframe.allowFullscreen = true;
+
+          embeddedDiv.appendChild(youtubeIframe);
+        });
+
+        const getSunriseButton = document.getElementById("getSunriseButton");
+        const sunriseLabel = document.getElementById("sunriseLabel");
+
+        getSunriseButton.addEventListener("click", function () {
+          fetch(
+            "https://api.sunrise-sunset.org/json?lat=47.63641&lng=19.13864&date=today&tzid=Europe/Budapest"
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              const sunriseTime = data.results.sunrise;
+              sunriseLabel.innerText = `Sunrise Time: ${sunriseTime}`;
+            })
+            .catch((error) =>
+              console.error("Error fetching sunrise time:", error)
+            );
+        });
+
+        const clearSunrise = document.getElementById("clearSunriselabel");
+        clearSunrise.addEventListener("click", function () {
+          document.getElementById("sunriseLabel").textContent = "";
+        });
+      });
+    </script>
+  </body>
+</html>
