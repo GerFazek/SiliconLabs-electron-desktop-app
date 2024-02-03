@@ -5,7 +5,7 @@ Library       OperatingSystem
 *** Variables ***
 ${python_script}        siliconlabs.py
 ${application_name}    silicon-labs-desktop-app
-${python_executable}   "C:\\Users\\Lenovo T490\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+${python_executable}   C:\\Users\\Lenovo T490\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe
 
 *** Test Cases ***
 Run Predefined Python Method
