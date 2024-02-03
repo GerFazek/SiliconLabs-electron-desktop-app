@@ -28,7 +28,7 @@ pipeline {
                 // bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install pywinauto'
                 // bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install pyautogui'
 
-                bat """C:\\Users\\Lenovo T490\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m robot Test.robot"""
+                bat "C:\\Users\\Lenovo%20T490\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m robot Test.robot
             }
         }
     }
