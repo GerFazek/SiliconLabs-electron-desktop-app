@@ -12,7 +12,7 @@ pipeline {
             steps {
                 bat 'npm install'
 
-                bat 'electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
+                bat 'C:\\Users\\Lenovo T490\\AppData\\Roaming\\npm\\electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
             }
         }
         stage('Start Electron App') {
