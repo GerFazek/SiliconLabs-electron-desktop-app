@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Start Robot Test') {
             steps {
-                bat 'robot Test.robot'
+                bat 'python -m robot Test.robot'
             }
         }
     }
