@@ -1,1 +1,1 @@
-This is just a readme update to test Jenkins PollSCM
+This is just a readme update to test Jenkins PollSCM.
