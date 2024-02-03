@@ -22,6 +22,8 @@ pipeline {
         }
         stage('Start Robot Test') {
             steps {
+                bat 'python -m pip install robotframework'
+
                 bat 'python -m robot Test.robot'
             }
         }
