@@ -12,7 +12,7 @@ pipeline {
             steps {
                 bat 'npm install'
                 //bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m venv venv'
-                bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\SiliconLabs Build+Test\\venv\\Scripts\ython.exe -m venv venv'
+                bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\SiliconLabs Build+Test\\venv\\Scripts\\python.exe -m venv venv'
                 bat 'venv\\Scripts\\activate'
 
                 bat 'C:\\Users\\"Lenovo T490"\\AppData\\Roaming\\npm\\electron-packager.cmd . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0 --overwrite'
