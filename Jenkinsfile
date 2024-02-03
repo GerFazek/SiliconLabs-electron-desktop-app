@@ -11,10 +11,10 @@ pipeline {
         stage('Build Electron App') {
             steps {
                 bat 'npm install'
-                bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m venv venv'
+                bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m venv venv'
                 bat 'venv\\Scripts\\activate'
 
-                bat 'C:\\Users\\"Lenovo T490"\\AppData\\Roaming\\npm\\electron-packager.cmd . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0 --overwrite'
+                bat 'C:\\Users\\"All Users"\\AppData\\Roaming\\npm\\electron-packager.cmd . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0 --overwrite'
             }
         }
 
@@ -26,11 +26,11 @@ pipeline {
 
         stage('Start Robot Test') {
             steps {
-                // bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install robotframework'
-                // bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install pywinauto'
-                // bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install pyautogui'
+                bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install robotframework'
+                bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install pywinauto'
+                bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m pip install pyautogui'
 
-                bat 'C:\\Users\\"Lenovo T490"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m robot Test.robot'
+                bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m robot Test.robot'
             }
         }
     }
@@ -55,7 +55,7 @@ pipeline {
 //             steps {
 //                 bat 'npm install'
 
-//                 bat 'C:\\Users\\"Lenovo T490"\\AppData\\Roaming\\npm\\electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
+//                 bat 'C:\\Users\\"All Users"\\AppData\\Roaming\\npm\\electron-packager . SiliconLabs --platform=win32 --arch=x64 --out=dist --electronVersion=28.2.0'
 //             }
 //         }
 //         stage('Start Electron App') {
