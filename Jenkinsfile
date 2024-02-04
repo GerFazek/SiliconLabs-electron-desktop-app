@@ -33,10 +33,10 @@ pipeline {
 
                 // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m robot Test.robot'
                 bat 'set PATH=C:\\Python312;%PATH%'
-                bat 'python -m pip install robotframework'
-                bat 'python -m pip install pywinauto'
-                bat 'python -m pip install pyautogui'
-                bat 'python -m robot Test.robot'
+                bat 'py -m pip install robotframework'
+                bat 'py -m pip install pywinauto'
+                bat 'py -m pip install pyautogui'
+                bat 'py -m robot Test.robot'
             }
         }
     }
