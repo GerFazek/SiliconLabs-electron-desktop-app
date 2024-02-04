@@ -44,7 +44,6 @@ pipeline {
             // }
             steps {
                 script {
-                    bat 'npm install'
 
                     // Full path to Python executable and Scripts directory
                     def pythonExecutable = 'C:\\Python312\\python.exe'
