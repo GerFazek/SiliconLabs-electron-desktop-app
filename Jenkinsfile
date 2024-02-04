@@ -26,40 +26,20 @@ pipeline {
         }
 
         stage('Start Robot Test') {
-            // steps {
-            //     // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install robotframework'
-            //     // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install pywinauto'
-            //     // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install pyautogui'
-
-            //     // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m robot Test.robot'
-            //     // Full path to Python executable and Scripts directory
-            //     def pythonExecutable = 'C:\\Python312\\python.exe'
-            //     def pythonScripts = 'C:\\Python312\\Scripts'
-
-            //     // Continue with your other commands
-            //     bat "${pythonExecutable} -m pip install robotframework"
-            //     bat "${pythonExecutable} -m pip install pywinauto"
-            //     bat "${pythonExecutable} -m pip install pyautogui"
-
-            // }
             steps {
-                script {
+                // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install robotframework'
+                // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install pywinauto'
+                // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install pyautogui'
 
-                    // Full path to Python executable and Scripts directory
-                    def pythonExecutable = 'C:\\Python312\\python.exe'
-                    def pythonScripts = 'C:\\Python312\\Scripts'
+                // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m robot Test.robot'
+                // Full path to Python executable and Scripts directory
 
-                    // Continue with your other commands
-                    bat "${pythonExecutable} -m pip install robotframework"
-                    bat "${pythonExecutable} -m pip install pywinauto"
-                    bat "${pythonExecutable} -m pip install pyautogui"
+                // Continue with your other commands
+                bat "python -m pip install robotframework"
+                bat "python -m pip install pywinauto"
+                bat "python -m pip install pyautogui"
+                bat 'robot Test.robot'
 
-                    // Add the Python Scripts directory to the PATH for subsequent commands
-                    bat "set PATH=${pythonScripts};%PATH%"
-
-                    // Continue with your other commands
-                    bat "${pythonExecutable} -m robot Test.robot"
-                }
             }
         }
     }
