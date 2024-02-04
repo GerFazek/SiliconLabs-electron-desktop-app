@@ -32,11 +32,15 @@ pipeline {
                 // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m pip install pyautogui'
 
                 // bat 'c:\\Users\\"All Users"\\Jenkins\\.jenkins\\workspace\\"SiliconLabs Build+Test"\\venv\\Scripts\\python.exe -m robot Test.robot'
-                bat 'set PATH=C:\\Python312;%PATH%'
-                bat 'py -m pip install robotframework'
-                bat 'py -m pip install pywinauto'
-                bat 'py -m pip install pyautogui'
-                bat 'py -m robot Test.robot'
+                // Full path to Python executable and Scripts directory
+                def pythonExecutable = 'C:\\Python312\\python.exe'
+                def pythonScripts = 'C:\\Python312\\Scripts'
+
+                // Continue with your other commands
+                bat "${pythonExecutable} -m pip install robotframework"
+                bat "${pythonExecutable} -m pip install pywinauto"
+                bat "${pythonExecutable} -m pip install pyautogui"
+
             }
         }
     }
