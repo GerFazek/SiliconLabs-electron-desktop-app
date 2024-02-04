@@ -11,6 +11,11 @@ pipeline {
         stage('Build Electron App') {
             steps {
                 bat 'npm install'
+                bat 'set PATH=C:\\Python312\\Scripts;%PATH%'
+                bat 'C:\\Python312\\python.exe --version'
+                bat 'C:\\Python312\\python.exe -m pip list'
+
+
                 //bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m venv venv'
                 bat 'c:\\Python312\\python.exe -m venv venv'
                 bat 'venv\\Scripts\\activate'
