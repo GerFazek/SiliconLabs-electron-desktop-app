@@ -12,8 +12,8 @@ pipeline {
             steps {
                 bat 'npm install'
                 bat 'set PATH=C:\\Python312\\Scripts;%PATH%'
-                bat 'C:\\Python312\\python.exe --version'
-                bat 'C:\\Python312\\python.exe -m pip list'
+                // bat 'C:\\Python312\\python.exe --version'
+                // bat 'C:\\Python312\\python.exe -m pip list'
 
 
                 //bat 'C:\\Users\\"All Users"\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe -m venv venv'
@@ -32,10 +32,9 @@ pipeline {
 
         stage('Start Robot Test') {
             steps {
-                bat 'c:\\Python312\\python.exe -m pip install robotframework'
-                bat 'c:\\Python312\\python.exe -m pip install pywinauto'
-                bat 'c:\\Python312\\python.exe -m pip install pyautogui'
-
+                bat 'C:\\Python312\\Scripts\\pip.exe install robotframework'
+                bat 'C:\\Python312\\Scripts\\pip.exe install pywinauto'
+                bat 'C:\\Python312\\Scripts\\pip.exe install pyautogui'
                 bat 'c:\\Python312\\python.exe -m robot Test.robot'
             }
         }
