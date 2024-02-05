@@ -21,7 +21,7 @@ pipeline {
 
         stage('Start Electron App') {
             steps {
-                bat 'start dist/SiliconLabs-win32-x64/SiliconLabs.exe'
+                cmd /c "start dist\SiliconLabs-win32-x64\SiliconLabs.exe"
             }
         }
 
